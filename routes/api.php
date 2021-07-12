@@ -20,4 +20,4 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::post('/login', [UserController::class, 'login']);
-Route::post('/regis', [UserController::class, 'regis']);
+Route::post('/regis', [UserController::class, 'daftar']);
