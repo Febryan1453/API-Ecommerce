@@ -52,28 +52,28 @@ class UserController extends Controller
     public function daftar(Request $request)
     {
         $psn = [
-            'name.required'      => 'Nama wajib diisi.',
+            'name.required'      => "Nama wajib diisi.",
 
-            'password.required'  => 'Password wajib diisi.',
-            'password.confirmed' => 'Password konfirmasi tidak sesuai.',
-            'password.min'       => 'Password minimal diisi dengan 5 karakter.',
+            'password.required'  => "Password wajib diisi.",
+            'password.confirmed' => "Password konfirmasi tidak sesuai.",
+            'password.min'       => "Password minimal diisi dengan 5 karakter.",
 
-            'email.required'     => 'Email wajib diisi.',
-            'email.email'        => 'Email tidak valid.',
-            'email.unique'       => 'Email sudah terdaftar.',
+            'email.required'     => "Email wajib diisi.",
+            'email.email'        => "Email tidak valid.",
+            'email.unique'       => "Email sudah terdaftar.",
 
-            'telp.max'           => 'Telepon tidak valid.',
-            'telp.min'           => 'Telepon tidak valid.',
-            'telp.required'      => 'Telepon wajib diisi.',
-            'telp.numeric'       => 'Telepon harus berupa angka.',
-            'telp.unique'        => 'Nomor telepon tertaut pada akun lain.',
+            'telp.max'           => "Telepon tidak valid.",
+            'telp.min'           => "Telepon tidak valid.",
+            'telp.required'      => "Telepon wajib diisi.",
+            'telp.numeric'       => "Telepon harus berupa angka.",
+            'telp.unique'        => "Nomor telepon tertaut pada akun lain.",
         ];
 
         $validasi = Validator::make($request->all(), [
-            'name' => 'required',
-            'email' => 'required|unique:users|email',
-            'telp' => 'required|unique:users|numeric',
-            'password' => 'required|min:5'
+            'name'               => "required",
+            'email'              => "required|unique:users|email",
+            'telp'               => "required|unique:users|numeric",
+            'password'           => "required|min:5"
         ], $psn);
 
         if ($validasi->fails()) {
@@ -96,7 +96,7 @@ class UserController extends Controller
         }
 
         // return $this->errorWoy('Failed', 'Registration failed');
-        return $this->errorWoy(0, 'Registration failed');
+        return $this->errorWoy(0, "Registration failed");
     }
 
     public function login(Request $request)
