@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\API\ProdukController;
 use App\Http\Controllers\API\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -21,3 +22,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('/login', [UserController::class, 'login']);
 Route::post('/regis', [UserController::class, 'daftar']);
+Route::get('/produk', [ProdukController::class, 'getProduk']);
